@@ -144,41 +144,49 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   pointer-events: none;
 }
 .hero-inner {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 0 24px;
-  width: 100%;
-}
-.hero-phase {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  padding: 0 24px;
+}
+.hero-catch,
+.hero-final {
+  grid-area: 1 / 1;
   opacity: 0;
-  transition: opacity 1s ease;
-  width: 90%;
+  transition: opacity 1.2s ease-out;
 }
-.hero-phase.is-active { opacity: 1; }
-.hero-phase .en {
-  font-size: 42px;
-  letter-spacing: 0.08em;
-  font-weight: 300;
-  color: var(--gold-beige);
-  margin-bottom: 16px;
-}
-.hero-phase .ja {
-  font-size: 18px;
-  letter-spacing: 0.2em;
+.hero-catch {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 36px;
+  letter-spacing: 0.12em;
+  font-weight: 600;
   color: var(--text-light);
 }
-.hero-final {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+.hero-catch.is-active { opacity: 1; }
+.hero-catch-line1 {
+  white-space: nowrap;
+  margin-bottom: 0.15em;
+}
+.hero-catch-line2 {
+  display: grid;
+  min-height: 1.4em;
+}
+.hero-catch-line2 > .hero-catch-swap {
+  grid-area: 1 / 1;
   opacity: 0;
-  transition: opacity 1.2s ease;
+  transition: opacity 0.6s ease;
+  white-space: nowrap;
+}
+.hero-catch-swap.is-visible {
+  opacity: 1;
+}
+.hero-final {
+  text-align: center;
+  transition: opacity 1.4s ease-in;
 }
 .hero-final.is-active { opacity: 1; }
 .hero-final .brand {
@@ -187,12 +195,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-weight: 700;
   color: var(--text-light);
   margin-bottom: 18px;
+  opacity: 0;
+  transition: opacity 1.4s ease-in;
 }
+.hero-final.is-active .brand { opacity: 1; }
 .hero-final .tag {
   font-size: 15px;
   letter-spacing: 0.3em;
   color: var(--gold-beige);
+  opacity: 0;
+  transition: opacity 1s ease-in 0.4s;
 }
+.hero-final.is-active .tag { opacity: 1; }
 .hero-scroll {
   position: absolute;
   left: 50%;
@@ -403,6 +417,65 @@ section { padding: 100px 0; }
 .purpose-drops .d1 { width: 30px; height: 42px; }
 .purpose-drops .d2 { width: 50px; height: 70px; }
 .purpose-drops .d3 { width: 80px; height: 110px; }
+
+/* Brands */
+.brands-lead {
+  text-align: center;
+  font-size: 15px;
+  color: var(--text-sub);
+  margin-bottom: 48px;
+}
+.brands-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+}
+.brand-card {
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.brand-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(26,22,20,0.08);
+}
+.brand-card-img {
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+.brand-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.brand-card:hover .brand-card-img img {
+  transform: scale(1.03);
+}
+.brand-card-body {
+  padding: 32px 28px;
+}
+.brand-card-name {
+  font-size: 26px;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+.brand-card-label {
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--gold-beige);
+  margin-bottom: 16px;
+}
+.brand-card-body p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-sub);
+  margin-bottom: 24px;
+}
 
 /* Track Record */
 .record-grid {
@@ -759,8 +832,7 @@ section { padding: 100px 0; }
   .nav-toggle { display: block; }
   .nav-cta { width: 100%; text-align: center; }
 
-  .hero-phase .en { font-size: 26px; }
-  .hero-phase .ja { font-size: 14px; letter-spacing: 0.15em; }
+  .hero-catch { font-size: 22px; letter-spacing: 0.08em; align-items: flex-start; }
   .hero-final .brand { font-size: 48px; }
   .hero-final .tag { font-size: 12px; }
   .hero-bg-drop { right: -160px; }
@@ -782,6 +854,9 @@ section { padding: 100px 0; }
   }
   .feature-item .num { font-size: 54px; }
   .feature-item h3 { font-size: 18px; }
+
+  .brands-grid { grid-template-columns: 1fr; gap: 28px; }
+  .brand-card-body { padding: 24px 20px; }
 
   .record-grid { grid-template-columns: 1fr; gap: 36px; }
   .record-item .num { font-size: 48px; }

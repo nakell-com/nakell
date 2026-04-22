@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NAKELL｜感動を、届ける。</title>
+<title>Nakell｜感動を、届ける。</title>
 <meta name="description" content="Nakell株式会社。手描きパラパラ漫画ムービー「hapico」、似顔絵ギフト通販「似顔絵はぴねす」。イラストで、感動をつくる。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,12 +15,15 @@
 <header class="site-header">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <span class="teardrop teardrop-sm"></span><span>NAKELL</span>
+      <span class="teardrop teardrop-sm"></span><span>Nakell</span>
     </a>
     <button class="nav-toggle" aria-label="メニュー"><span></span><span></span><span></span></button>
     <ul class="nav-menu">
       <li><a href="company.html">会社紹介</a></li>
       <li><a href="service.html">サービス</a></li>
+      <!-- 画像未準備のため一時無効化。画像配置後に解除。
+      <li><a href="#brands">ブランド</a></li>
+      -->
       <li><a href="news.html">お知らせ</a></li>
       <li><a href="contact.html">お問い合わせ</a></li>
       <li><a href="contact.html" class="nav-cta">無料で相談</a></li>
@@ -33,16 +36,21 @@
     <path d="M270 20 C 420 180, 520 340, 520 480 C 520 610, 410 690, 270 690 C 130 690, 20 610, 20 480 C 20 340, 120 180, 270 20 Z" fill="#c8a96e" opacity="0.04"/>
   </svg>
   <div class="hero-inner">
-    <div class="hero-phase" data-phase="1">
-      <div class="en">Naked Tell</div>
-      <div class="ja">飾らないまま、届ける。</div>
+    <!-- フェーズ1〜4: キャッチコピー -->
+    <div class="hero-catch">
+      <div class="hero-catch-line1">泣けるほどの、</div>
+      <div class="hero-catch-line2">
+        <span class="hero-catch-swap">一枚を。</span>
+        <span class="hero-catch-swap">贈り物を。</span>
+        <span class="hero-catch-swap">思い出を。</span>
+      </div>
     </div>
-    <div class="hero-phase" data-phase="2">
-      <div class="en">knell</div>
-      <div class="ja">鐘の音。転換点を告げる響き。</div>
-    </div>
+    <!-- フェーズ5: ブランドリビール（最終画面・ループなし）
+         ループなしの判断理由: ブランドサイトのヒーローは最終的にブランド名で
+         着地させ、余韻を残す方が訪問者の印象に残りやすいため。
+         繰り返すとバナー広告的な印象を与え、品位を損なうリスクがある。 -->
     <div class="hero-final">
-      <div class="brand">NAKELL</div>
+      <div class="brand">Nakell</div>
       <div class="tag">感動を、届ける。</div>
     </div>
   </div>
@@ -137,6 +145,43 @@
   </div>
 </section>
 
+<!-- 画像未準備のため一時無効化。画像配置後に解除。
+<section class="bg-beige brands" id="brands">
+  <div class="container">
+    <div class="section-title">
+      <span class="en">OUR BRANDS</span>
+      <h2>私たちのブランド</h2>
+    </div>
+    <p class="brands-lead">Nakellは "感動を、届ける" をテーマに、2つのサービスブランドを展開しています。</p>
+    <div class="brands-grid">
+      <div class="brand-card">
+        <div class="brand-card-img">
+          <img src="images/service-hapico.webp" alt="hapico｜フリップ映像制作">
+        </div>
+        <div class="brand-card-body">
+          <h3 class="brand-card-name">hapico</h3>
+          <span class="brand-card-label">フリップ映像制作</span>
+          <p>大切な人へ、めくるたびに感動が生まれるフリップ映像を。結婚式・誕生日・退職祝いなどの贈り物に。</p>
+          <a href="https://hapico-movie.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark">hapicoのサイトへ</a>
+        </div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-card-img">
+          <img src="images/service-nigaoe.webp" alt="nigaoe｜似顔絵ギフト">
+        </div>
+        <div class="brand-card-body">
+          <h3 class="brand-card-name">nigaoe</h3>
+          <span class="brand-card-label">似顔絵ギフト</span>
+          <p>プロのイラストレーターが描く、世界にひとつの似顔絵を。家族・ペット・大切な人への特別な贈り物に。</p>
+          <a href="https://nigaoe-happiness.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark">nigaoeのサイトへ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+
 <section class="bg-dark">
   <div class="container">
     <div class="section-title">
@@ -208,7 +253,7 @@
   <div class="container">
     <div class="footer-top">
       <a href="index.html" class="footer-logo">
-        <span class="teardrop teardrop-sm"></span><span>NAKELL</span>
+        <span class="teardrop teardrop-sm"></span><span>Nakell</span>
       </a>
       <ul class="footer-nav">
         <li><a href="company.html">会社紹介</a></li>
