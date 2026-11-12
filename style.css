@@ -883,3 +883,16 @@ section { padding: 100px 0; }
   .purpose-drops .d2 { width: 28px; height: 40px; }
   .purpose-drops .d3 { width: 44px; height: 60px; }
 }
+
+/* Real service examples — 2026-11-12 */
+.service-card{overflow:hidden;padding:0 32px 36px;border:1px solid rgba(26,22,20,.08)}
+.service-card-image{margin:0 -32px 28px;aspect-ratio:4/3;background:#fff;display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(26,22,20,.06)}
+.service-card-image img{display:block;width:100%;height:100%;object-fit:contain}
+.service-card .en{color:var(--text-dark);font-size:26px}
+.service-card p{min-height:0;line-height:1.9}
+.service-card .btn{margin-top:4px}
+.service-media{background:#fff;border-radius:3px;border:1px solid rgba(26,22,20,.08)}
+.service-media img{display:block;width:100%;height:100%;object-fit:contain}
+.service-card:focus-visible{outline:3px solid var(--gold-beige);outline-offset:5px}
+.record-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:768px){.service-card{padding:0 24px 28px}.service-card-image{margin:0 -24px 24px}.service-card .en{font-size:24px}.service-block{gap:28px;padding:36px 0}}
