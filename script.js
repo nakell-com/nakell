@@ -29,7 +29,6 @@
   if (hero) {
     var catchEl = hero.querySelector('.hero-catch');
     var line1 = hero.querySelector('.hero-catch-line1');
-    var line2 = hero.querySelector('.hero-catch-line2');
     var swaps = hero.querySelectorAll('.hero-catch-swap');
     var finalEl = hero.querySelector('.hero-final');
     var swapIndex = 0;
@@ -46,9 +45,8 @@
 
     function showSwap() {
       if (swapIndex >= swaps.length) {
-        // Phase 4: "泣けるほどの…" — change punctuation, hide line2
+        // Phase 4: "泣けるほどの…" — change punctuation and keep the empty second row in place
         line1.textContent = '\u6CE3\u3051\u308B\u307B\u3069\u306E\u2026';
-        line2.style.display = 'none';
         setTimeout(function () {
           // Fade out catch, then reveal brand
           catchEl.classList.remove('is-active');
